@@ -1,0 +1,104 @@
+/* General reset and box-sizing */
+
+/* Body and main container */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    /* Soft light background */
+    color: #333;
+    /* Dark text for readability */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: skyblue;
+    /* White card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    width: 100%;
+    max-width: 800px;
+    /* Limit max width for large screens */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Heading Styles */
+h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    /* Friendly green for the title */
+    margin-bottom: 10px;
+}
+
+/* Profile Info Styling */
+p {
+    font-size: 1.2rem;
+    color: #555;
+    /* Slightly lighter text for paragraphs */
+    margin: 10px 0;
+}
+
+p strong {
+    color: #4CAF50;
+    /* Green for labels (like Name, Bio, etc.) */
+}
+
+/* Bio Section */
+.bio {
+    font-style: italic;
+    color: #777;
+    /* Lighter color for bio text */
+    margin-top: 5px;
+}
+
+/* Links */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    /* Friendly blue for buttons */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* Styling for the edit section (optional) */
+.edit-section {
+    margin-top: 30px;
+}
+
+.edit-section a {
+    background-color: #28a745;
+    /* Green button for edit */
+}
+
+.edit-section a:hover {
+    background-color: #218838;
+    /* Darker green on hover */
+}
+
+/* Styling for the logout section */
+.logout-section {
+    margin-top: 10px;
+}
+
+.logout-section a {
+    background-color: #dc3545;
+    /* Red button for logout */
+}
+
+.logout-section a:hover {
+    background-color: #c82333;
+    /* Darker red on hover */
+}
