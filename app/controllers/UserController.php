@@ -50,8 +50,8 @@ class UserController extends Controller
                 } else {
                     $this->view('register', ['error' => 'Registration failed.']);
                 }
-            } catch (Exception $e) {
-                $this->view('register', ['error' => 'Error: ' . $e->getMessage()]);
+            } catch (Exception) {
+                $this->view('register', ['error' => 'Error: ' . "This username/email is already taken"]);
             }
         } else {
             $this->view('register');

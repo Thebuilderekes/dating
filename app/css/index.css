@@ -6,27 +6,43 @@
 
 html {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 
 body {
   width: 100%;
-  height: 100%;
   color: whitesmoke;
   font-family: Helvetica, sans-serif;
 }
 
+
+.error {
+  font-size: 20px;
+  font-weight: 600;
+  background: #000;
+  color: red;
+}
+
 main {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
 }
 
 h1 {
-color : darkviolet;
-font-size: 60px;
-text-align: center;
+  color: darkviolet;
+  font-size: 60px;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  text-align: center;
+  padding: 20px 0;
+
+
 }
 
 .fancy-bg {
@@ -34,14 +50,14 @@ text-align: center;
 }
 
 
-@media (min-width: 850px){
-.fancy-bg {
-  display: flex;
-  justify-content: center;
-  padding-top: 15%;
-  width: 50%;
-  background: lavender;
-}
+@media (min-width: 850px) {
+  .fancy-bg {
+    display: flex;
+    justify-content: center;
+    padding-top: 15%;
+    width: 50%;
+    background: lavender;
+  }
 
 }
 
@@ -53,16 +69,14 @@ text-align: center;
   align-items: center;
 }
 
-@media (min-width: 850px){
-.form-container {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+@media (min-width: 850px) {
+  .form-container {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
 }
 
 label {
@@ -78,35 +92,40 @@ label {
 }
 
 .form-container .submit-btn-container .btn {
-  color: white;
+  color: darkviolet;
   width: 150px;
   font-size: 20px;
   padding: 5px 10px;
   border: none;
-  background: blue;
-  pointer: cursor;
+  background: lavender;
+  cursor: pointer;
 }
-
+.form-container .submit-btn-container .btn:hover {
+  color: lavender;
+  background: violet;
+}
 .form {
   padding: 50px 20px;
   width: 500px;
-  height: 100%;
   border: 3px solid white;
 }
 
 
-@media (min-width: 850px){
-.form {
-  padding: 15px 20px;
-}
+@media (min-width: 850px) {
+  .form {
+    padding: 15px 20px;
+  }
 }
 
 .form input {
+  font-size: 20px;
   width: 100%;
+  height: 45px;
+  border: none;
   border-radius: 15px;
   display: block;
   margin: 10px 0;
-  height: 45px;
+  padding-inline: 15px;
 }
 
 .form p {

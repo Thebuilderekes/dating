@@ -14,7 +14,7 @@
     <main>
         <section class="container">
             <h2>Welcome, <?= htmlspecialchars($user['username'] ?? 'Guest') ?></h2>
-            <p><strong>Name:</strong> <?= htmlspecialchars($user['first_name'] ?? 'Not Provided') ?> <?= htmlspecialchars($user['last_name'] ?? 'Not Provided') ?></p>
+            <p><strong>Name:</strong> <?= htmlspecialchars($user['first_name'] ?? '') ?> <?= htmlspecialchars($user['last_name'] ?? '') ?></p>
             <p><strong>Bio:</strong> <span class="bio"><?= htmlspecialchars($user['bio'] ?? 'This user has no bio yet.') ?></span></p>
             <a class="btn edit-btn" href="/edit-profile">Edit Profile</a>
             <a class="btn logout-btn" href="/logout">Logout</a>

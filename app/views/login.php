@@ -19,7 +19,7 @@
     <section class="form-container">
       <form class="form" method="POST">
         <h2>Login</h2>
-        <?php if (!empty($error)) echo "<p>$error</p>"; ?>
+        <?php if (!empty($error)) echo "<p class='error'>$error</p>"; ?>
         <label for="name">
           Username:
           <input id="name" name="username"><br>
