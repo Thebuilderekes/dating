@@ -22,7 +22,7 @@ class UserController extends Controller
                     exit;
                 } else {
                     $this->view('login', ['error' => 'Invalid credentials']);
-                    return;
+                    return $user;
                 }
             } catch (Exception $e) {
                 $this->view('login', ['error' => 'An error occurred: ' . $e->getMessage()]);
@@ -95,7 +95,23 @@ class UserController extends Controller
         $this->view('profile', ['user' => $user]);
     }
 
+public function deleteUser()
+{
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
+        $userId = $_POST['delete_id'];
 
+        try {
+            $this->userModel->deleteUserById($userId);
+            header("Location: /admin_dashboard"); // or wherever your dashboard is
+            exit;
+        } catch (Exception $e) {
+            $this->view('admin/dashboard', ['error' => 'Failed to delete user: ' . $e->getMessage()]);
+        }
+    } else {
+        header("Location: index.php?page=admin_dashboard");
+    }
+}
+ 
 
     public function logout()
     {

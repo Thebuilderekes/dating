@@ -31,6 +31,7 @@
         <div class="submit-btn-container">
           <button class="btn" type="submit" id="submit">Login</button>
         </div>
+        
         <p>Dont have an account? <a href="/register">Register</a> </p>
       </form>
     </section>
