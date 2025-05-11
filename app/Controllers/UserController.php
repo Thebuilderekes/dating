@@ -1,11 +1,13 @@
 <?php
-require_once __DIR__ . "./../../session.php";
-require_once __DIR__ . "./../models/User.php";
-require_once __DIR__ . "./../core/Controller.php";
+Namespace App\Controllers;
+use App\Core\Controller;
+use App\Models\User;
+require_once __DIR__ . "/../../session.php";
+require_once __DIR__ . "/../Core/Controller.php";
 
 class UserController extends Controller
 {
-    private $userModel;
+    protected $userModel;
 
     public function __construct()
     {
@@ -24,7 +26,7 @@ class UserController extends Controller
                     $this->view('login', ['error' => 'Invalid credentials']);
                     return $user;
                 }
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $this->view('login', ['error' => 'An error occurred: ' . $e->getMessage()]);
             }
         } else {
@@ -33,28 +35,28 @@ class UserController extends Controller
     }
 
 
-    public function register()
+    public function signUp()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 // Simple validation
                 if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password'])) {
-                    $this->view('register', ['error' => 'All fields are required.']);
+                    $this->view('signUp', ['error' => 'All fields are required.']);
                     return;
                 }
 
-                $success = $this->userModel->register($_POST['username'], $_POST['email'], $_POST['password']);
+                $success = $this->userModel->signUp($_POST['username'], $_POST['email'], $_POST['password']);
                 if ($success) {
                     header("Location: /login");
                     exit;
                 } else {
-                    $this->view('register', ['error' => 'Registration failed.']);
+                $this->view('signUp', ['error' =>"This username/email is already taken"]);
                 }
-            } catch (Exception) {
-                $this->view('register', ['error' => 'Error: ' . "This username/email is already taken"]);
+            } catch (\Exception) {
+                $this->view('signUp', ['error' =>"This username/email is already taken"]);
             }
         } else {
-            $this->view('register');
+            $this->view('signUp');
         }
     }
 
@@ -79,7 +81,7 @@ class UserController extends Controller
 
             $user = $this->userModel->getUserById($_SESSION['user_id']);
             $this->view('edit_profile', ['user' => $user]);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->view('edit_profile', ['error' => 'An error occurred: ' . $e->getMessage()]);
         }
     }
@@ -95,23 +97,23 @@ class UserController extends Controller
         $this->view('profile', ['user' => $user]);
     }
 
-public function deleteUser()
-{
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
-        $userId = $_POST['delete_id'];
+    public function deleteUser()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
+            $userId = $_POST['delete_id'];
 
-        try {
-            $this->userModel->deleteUserById($userId);
-            header("Location: /admin_dashboard"); // or wherever your dashboard is
-            exit;
-        } catch (Exception $e) {
-            $this->view('admin/dashboard', ['error' => 'Failed to delete user: ' . $e->getMessage()]);
+            try {
+                $this->userModel->deleteUserById($userId);
+                header("Location: /admin_dashboard"); // or wherever your dashboard is
+                exit;
+            } catch (\Exception $e) {
+                $this->view('admin/dashboard', ['error' => 'Failed to delete user: ' . $e->getMessage()]);
+            }
+        } else {
+            header("Location: index.php?page=admin_dashboard");
         }
-    } else {
-        header("Location: index.php?page=admin_dashboard");
     }
-}
- 
+
 
     public function logout()
     {

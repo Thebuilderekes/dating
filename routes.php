@@ -1,13 +1,13 @@
 <?php
-require_once __DIR__ . '/app/controllers/UserController.php';
-require_once __DIR__ . '/app/controllers/AdminController.php';
+use App\Controllers\UserController;
+use App\Controllers\AdminController;
 
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$controller = new UserController();
+$uri = isset($_SERVER['REQUEST_URI']) ? parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) : '/';
+$userController = new UserController();
 $adminController = new AdminController();
 switch ($uri) {
     case '/':
-        $controller->register();
+        $userController->signUp();
         break;
     case '/admin_login':
         $adminController->login();
@@ -19,20 +19,22 @@ switch ($uri) {
         $adminController->logout();
         break;
     case '/login':
-        $controller->login();
+        $userController->login();
         break;
-    case '/register':
-        $controller->register();
+    case '/signUp':
+        $userController->signUp();
         break;
     case '/profile':
-        $controller->profile();
+        $userController->profile();
         break;
     case '/edit-profile':
-        $controller->editProfile();
+        $userController->editProfile();
         break;
     case '/logout':
-        $controller->logout();
+        $userController->logout();
         break;
     default:
         echo "404 Not Found"; // controller->404();
 }
+
+

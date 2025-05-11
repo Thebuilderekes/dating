@@ -4,18 +4,89 @@
   box-sizing: border-box;
 }
 
-html {
-  width: 100%;
-  height: 100vh;
+:root {
+
+  --light: lavender;
+  --primary: darkviolet;
+  --secondary: fuchsia;
 }
 
+
+
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
 
 body {
   width: 100%;
-  color: whitesmoke;
   font-family: Helvetica, sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.flex-center {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+  padding: 0 10px;
+}
+
+nav {
+  padding: 20px;
+  background: var(--light);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li a {
+  color: var(--primary);
+}
+
+nav ul li:first-child {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+nav .nav-link {
+  display: flex;
+  gap: 2rem;
+}
+
+
+.btn {
+  background: var(--primary);
+  padding: 10px 15px;
+  color: whitesmoke;
+}
+
+.btn:hover {
+  background: fuchsia;
+  color: black;
+}
+
+nav .img-placeholder {
+  background: var(--primary);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
 
 .error {
   font-size: 20px;
@@ -24,16 +95,17 @@ body {
   color: red;
 }
 
-main {
+.wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
+  overflow-y: hidden;
 }
 
 h1 {
-  color: darkviolet;
-  font-size: 60px;
-  padding: 20px;
+  color: var(--primary);
+  font-size: 40px;
+  margin: 20px 0;
   text-align: center;
 }
 
@@ -49,20 +121,23 @@ h2 {
   display: none;
 }
 
-
 @media (min-width: 850px) {
   .fancy-bg {
     display: flex;
-    justify-content: center;
-    padding-top: 15%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 95px;
     width: 50%;
+    height: 100vh;
     background: lavender;
+
   }
 
 }
 
 .form-container {
   width: 100%;
+  color: whitesmoke;
   display: flex;
   background: rebeccapurple;
   flex-direction: column;
@@ -79,10 +154,6 @@ h2 {
   }
 }
 
-label {
-  font-size: 30px;
-  font-weight: 600;
-}
 
 .form-container .submit-btn-container {
   width: 100%;
@@ -92,7 +163,7 @@ label {
 }
 
 .form-container .submit-btn-container .btn {
-  color: darkviolet;
+  color: var(--primary);
   width: 150px;
   font-size: 20px;
   padding: 5px 10px;
@@ -100,10 +171,12 @@ label {
   background: lavender;
   cursor: pointer;
 }
+
 .form-container .submit-btn-container .btn:hover {
   color: lavender;
-  background: violet;
+  background: fuchsia;
 }
+
 .form {
   padding: 50px 20px;
   width: 500px;
@@ -124,7 +197,7 @@ label {
   border: none;
   border-radius: 15px;
   display: block;
-  margin: 10px 0;
+  margin: 5px 0;
   padding-inline: 15px;
 }
 
@@ -136,4 +209,17 @@ label {
 .form a {
   text-decoration: underline;
   color: white;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: white;
+  position: sticky;
+  top: 100vh;
 }

@@ -1,0 +1,83 @@
+.container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.square {
+  width: 150px;
+  height: 150px;
+  background: fuchsia;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.gear,
+.heart {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.gear {
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: conic-gradient(var(--primary) 0% 12.5%, transparent 12.5% 25%, var(--primary) 25% 37.5%, transparent 37.5% 50%, var(--primary) 50% 62.5%, transparent 62.5% 75%, var(--primary) 75% 87.5%, transparent 87.5% 100%);
+  border-radius: 50%;
+  transform: translate(-120%, -50%) rotate(0deg);
+  animation: moveGearUpLeft 1.5s ease-out forwards;
+}
+
+.heart {
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  transform: rotate(-45deg) translate(20%, -50%);
+  animation: moveHeartUpRight 1.5s ease-out forwards;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -30px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 30px;
+}
+
+@keyframes moveGearUpLeft {
+  from {
+    transform: translate(-120%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-200%, -180%) rotate(-10deg);
+  }
+}
+
+@keyframes moveHeartUpRight {
+  from {
+    transform: rotate(-45deg) translate(20%, -50%);
+  }
+
+  to {
+    transform: rotate(-45deg) translate(200%, -150%) rotate(10deg);
+  }
+}

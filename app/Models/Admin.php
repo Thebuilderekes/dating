@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . '/../core/Database.php';
+namespace App\Models;
+use App\Core\Database;
+require_once __DIR__ . '/../Core/Database.php';
+
 class Admin
 {
   private $pdo;
@@ -19,7 +22,7 @@ class Admin
   public function getAllUsers()
   {
     $stmt = $this->pdo->query("SELECT id, username, email, bio FROM dating_app_user ORDER BY id ASC");
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
   }
 
   public function deleteUserById($id)

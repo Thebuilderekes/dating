@@ -1,7 +1,8 @@
 <?php
+namespace App\Controllers;
+use App\Core\Controller;
+use App\Models\User;
 require_once __DIR__ . "/../../session.php";
-require_once __DIR__ . "/../models/User.php";
-require_once __DIR__ . "/../core/Controller.php";
 
 class AdminController extends Controller
 {
@@ -31,7 +32,7 @@ public function login()
       } else {
         $this->view('admin/login', ['error' => 'Access denied. Admins only.']);
       }
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
       $this->view('admin/login', ['error' => 'An error occurred: ' . $e->getMessage()]);
     }
   } else {
@@ -62,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
   $users = []; // fallback, so the view only sees arrays
 }
       $this->view('admin/dashboard', ['users' => $users]);
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
       $this->view('admin/dashboard', ['error' => 'Failed to load users: ' . $e->getMessage()]);
     }
 
@@ -82,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
     try {
       $this->userModel->deleteUserById($id);
       header("Location: /admin/dashboard");
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
       $this->view('admin/dashboard', ['error' => 'Error deleting user: ' . $e->getMessage()]);
     }
   }
