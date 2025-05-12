@@ -1,1 +1,0 @@
-{"version":1,"defects":{"UserControllerTest::testLoginRedirectsOnSuccess":8,"UserControllerTest::testSignUpFailsIfFieldsEmpty":8,"UserTest::testSignUpReturnsTrueOnSuccess":8,"UserTest::testLoginReturnsUserOnCorrectPassword":8},"times":[]}

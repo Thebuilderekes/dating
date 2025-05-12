@@ -24,13 +24,16 @@
 }
 
 .gear {
-  left: 50%;
   width: 60px;
   height: 60px;
-  background: conic-gradient(var(--primary) 0% 12.5%, transparent 12.5% 25%, var(--primary) 25% 37.5%, transparent 37.5% 50%, var(--primary) 50% 62.5%, transparent 62.5% 75%, var(--primary) 75% 87.5%, transparent 87.5% 100%);
-  border-radius: 50%;
+  left: 50%;
   transform: translate(-120%, -50%) rotate(0deg);
   animation: moveGearUpLeft 1.5s ease-out forwards;
+}
+
+.gear img {
+  width: 60px;
+  height: 60px;
 }
 
 .heart {

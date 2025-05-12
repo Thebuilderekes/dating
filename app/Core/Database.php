@@ -1,12 +1,12 @@
 <?php
 Namespace App\Core;
-require_once __DIR__ . './../../config.php';
+require_once __DIR__ . '/../../config.php';
 
 class Database
 {
-    public static function connect(string $dbname = "dating_app_test"): \PDO
+    public static function connect(): \PDO
     {
-        $dsn = "mysql:host=" . DB_HOST . ";dbname=" . $dbname;
+        $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME;
 
         try {
             return new \PDO($dsn, DB_USER, DB_PASS, [
