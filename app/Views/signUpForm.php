@@ -1,11 +1,12 @@
 <?php
+namespace App\Views;
 ob_start();
 ?>
 <div class="wrapper">
   <section class="fancy-bg">
       <div class="container">
         <div class="gear">
-          <img src="../assets/211751_gear_icon.png" alt="gear icon"/>
+          <img src="./app/assets/gear-70.png" alt="gear icon"/>
         </div>
         <div class="heart"></div>
         <div class="square"></div>

@@ -1,6 +1,7 @@
 <?php
 Namespace App\Views;
 // Simulate fetching content (e.g., dashboard content)
+
 $content = include 'signUpForm.php';
 $page = "login";
 $btn = "Login";

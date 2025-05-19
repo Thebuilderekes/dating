@@ -1,7 +1,30 @@
+.page-wrapper {
+    height: 100vh;
+    display: flex;
+    gap: 2rem;
+    background: lavender;
+}
+
 .profile-container {
+    position: sticky;
+    padding: 0 20px;
+    display: flex;
+    background: #a888e1;
+    width: 25%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.posts {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 75%;
+}
+
+.profile-container p {
+    text-align: start;
 }
 
 .edit-btn {

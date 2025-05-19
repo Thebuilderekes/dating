@@ -2,16 +2,20 @@
 namespace App\Controllers;
 use App\Core\Controller;
 use App\Models\User;
+use App\Models\Admin;
 require_once __DIR__ . "/../../session.php";
 
 class AdminController extends Controller
 {
   private $userModel;
-
+  private $adminModel;
   public function __construct()
   {
     $this->userModel = new User();
+    $this->adminModel = new Admin();
   }
+
+
 public function login()
 {
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -43,35 +47,31 @@ public function login()
 
   public function dashboard()
   {
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
-    $deleteId = (int) $_POST['delete_id'];
-    if ($deleteId > 0) {
-        $this->userModel->deleteUserById($deleteId);
-        header("Location: /admin_dashboard");
-        exit;
-    }
-}
+      if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
+          $deleteId = (int) $_POST['delete_id'];
+          if ($deleteId > 0) {
+              $this->adminModel->deleteUserById($deleteId);
+              header("Location: /admin_dashboard");
+              exit;
+          }
+      }
 
-    if (!isset($_SESSION['user_id'])) {
-      header("Location: /admin_login");
-      exit;
-    }
+      if (!isset($_SESSION['user_id'])) {
+        header("Location: /admin_login");
+        exit;
+      }
 
     try {
-      $users = $this->userModel->getAllUsers();
-      if ($users === false) {
-  $users = []; // fallback, so the view only sees arrays
-}
+        $users = $this->adminModel->getAllUsers();
+        if ($users === false) {
+          $users = []; // fallback, so the view only sees arrays
+        }
       $this->view('admin/dashboard', ['users' => $users]);
     } catch (\Exception $e) {
       $this->view('admin/dashboard', ['error' => 'Failed to load users: ' . $e->getMessage()]);
     }
 
-
-
-
-
-  }
+ }
 
   public function deleteUser($id)
   {
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
     }
 
     try {
-      $this->userModel->deleteUserById($id);
+      $this->adminModel->deleteUserById($id);
       header("Location: /admin/dashboard");
     } catch (\Exception $e) {
       $this->view('admin/dashboard', ['error' => 'Error deleting user: ' . $e->getMessage()]);

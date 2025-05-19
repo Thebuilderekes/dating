@@ -46,22 +46,6 @@ class User
             return false;
         }
     }
-
-    public function getAllUsers(): array|false
-    {
-        try {
-            $stmt = $this->pdo->prepare("SELECT user_id, username, email FROM dating_app_user");
-            if ($stmt->execute()) { // Check if execute is successful
-                return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-            }
-            return false; // Return false if execution fails
-        } catch (\PDOException $e) {
-            error_log("Get all users error: " . $e->getMessage());
-            return false;
-        }
-    }
-
-
     public function deleteUserById(int $id): bool
     {
         try {

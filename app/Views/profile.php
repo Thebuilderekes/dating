@@ -1,4 +1,5 @@
 <?php
+namespace App\Views;
 // Simulate fetching content (e.g., dashboard content)
 $content = include 'profilePage.php';
 $user = $user['username'];

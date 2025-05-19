@@ -1,13 +1,15 @@
 <?php
 use App\Controllers\UserController;
 use App\Controllers\AdminController;
+use App\Controllers\PostController;
 
 $uri = isset($_SERVER['REQUEST_URI']) ? parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) : '/';
 $userController = new UserController();
 $adminController = new AdminController();
+$postController = new PostController();
 switch ($uri) {
     case '/':
-        $userController->signUp();
+        $userController->login();
         break;
     case '/admin_login':
         $adminController->login();
@@ -26,9 +28,16 @@ switch ($uri) {
         break;
     case '/profile':
         $userController->profile();
+        $postController->showTimeline();
         break;
     case '/edit-profile':
         $userController->editProfile();
+        break;
+    case '/create_post':
+        $postController->createPost();
+        break;
+    case '/add_comment':
+        $postController->addComment();
         break;
     case '/logout':
         $userController->logout();

@@ -6,11 +6,11 @@
 }
 
 .square {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background: fuchsia;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -38,18 +38,18 @@
 
 .heart {
   left: 50%;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background-color: red;
-  transform: rotate(-45deg) translate(20%, -50%);
+  transform: rotate(-45deg) translate(5%, -50%);
   animation: moveHeartUpRight 1.5s ease-out forwards;
 }
 
 .heart::before,
 .heart::after {
   content: '';
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background-color: red;
   border-radius: 50%;
   position: absolute;

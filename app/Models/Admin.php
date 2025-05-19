@@ -4,30 +4,53 @@ use App\Core\Database;
 require_once __DIR__ . '/../Core/Database.php';
 
 class Admin
+
 {
-  private $pdo;
+    protected \PDO $pdo;
 
-  public function __construct()
-  {
-    $this->pdo = Database::connect();
-  }
+    public function __construct()
+    {
+        $this->pdo = Database::connect();
+    }
 
-  public function getByUsername(string $username)
-  {
-    $stmt = $this->pdo->prepare("SELECT * FROM dating_app_user WHERE username = ? AND is_admin = 1");
-    $stmt->execute([$username]);
-    return $stmt->fetch();
-  }
+    public function getAllUsers(): array|false
+    {
+        try {
+            $stmt = $this->pdo->prepare("SELECT user_id, username, email FROM dating_app_user");
+            if ($stmt->execute()) { // Check if execute is successful
+                return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            }
+            return false; // Return false if execution fails
+        } catch (\PDOException $e) {
+            error_log("Get all users error: " . $e->getMessage());
+            return false;
+        }
+    }
 
-  public function getAllUsers()
-  {
-    $stmt = $this->pdo->query("SELECT id, username, email, bio FROM dating_app_user ORDER BY id ASC");
-    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-  }
 
-  public function deleteUserById($id)
-  {
-    $stmt = $this->pdo->prepare("DELETE FROM dating_app_user WHERE id = ?");
-    return $stmt->execute([$id]);
-  }
+    public function deleteUserById(int $id): bool
+    {
+        try {
+            $stmt = $this->pdo->prepare("DELETE FROM dating_app_user WHERE user_id = :id");
+            return $stmt->execute(['id' => $id]);
+        } catch (\PDOException $e) {
+            error_log("Delete user error: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public function getUserById(int $id): array|false
+    {
+        try {
+            $sql = "SELECT * FROM dating_app_user WHERE user_id = ?";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute([$id]);
+            return $stmt->fetch(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            error_log("Get user by ID error: " . $e->getMessage());
+            return false;
+        }
+    }
+
 }
+
