@@ -1,6 +1,5 @@
 <?php
 namespace App\Models;
-
 use App\Core\Database;
 require_once __DIR__ . "./../Core/Database.php";
 

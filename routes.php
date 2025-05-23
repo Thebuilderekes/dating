@@ -28,9 +28,9 @@ switch ($uri) {
         break;
     case '/profile':
         $userController->profile();
-        $postController->showTimeline();
+        $postController->getAllPosts();
         break;
-    case '/edit-profile':
+    case '/edit_profile':
         $userController->editProfile();
         break;
     case '/create_post':

@@ -23,7 +23,7 @@ class UserController extends Controller
                     header("Location: /profile");
                     exit;
                 } else {
-                    $this->view('login', ['error' => 'Invalid credentials']);
+                    $this->view('login', ['error' => 'Wrong username or password']);
                     return $user;
                 }
             } catch (\Exception $e) {
@@ -62,6 +62,7 @@ class UserController extends Controller
 
     public function editProfile()
     {
+
         if (!isset($_SESSION['user_id'])) {
             header('Location: /login');
             exit;

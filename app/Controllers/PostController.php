@@ -1,9 +1,8 @@
 <?php
 namespace App\Controllers;
-
 use App\Models\Post;
 use App\Models\Comment;
-
+require_once __DIR__ . "/../../session.php"; //added newly
 class PostController
 {
     protected Post $postModel;
@@ -15,7 +14,7 @@ class PostController
         $this->commentModel = new Comment();
     }
 
-    public function createPost()
+    public function createPost(): void
     {
         //session_start();
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
@@ -27,19 +26,19 @@ class PostController
         }
     }
 
-    public function showTimeline()
+    public function getAllPosts():array
     {
         $posts = $this->postModel->getAllPosts();
         return $posts;
-        include __DIR__ . '/../Views/timeline.php'; // Loads HTML view
+        //include __DIR__ . '/../Views/timeline.php'; // Loads HTML view
     }
 
-    public function addComment()
+    public function addComment(): void
     {
        // session_start();
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment'], $_POST['post_id'])) {
             $this->commentModel->addComment($_SESSION['user_id'], $_POST['post_id'], $_POST['comment']);
-            header("Location: /profile.php");
+            header("Location: /profile");
             exit;
         }
     }

@@ -1,37 +1,28 @@
 .page-wrapper {
-    height: 100vh;
     display: flex;
-    gap: 2rem;
+    justify-content: space-between;
     background: lavender;
 }
 
 .profile-container {
-    position: sticky;
     padding: 0 20px;
     display: flex;
-    background: #a888e1;
-    width: 25%;
+    background: #1a0024;
+    width: 30%;
     flex-direction: column;
     align-items: center;
 }
 
-.posts {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 75%;
-}
+.profile-container h3 {}
 
 .profile-container p {
+    color: var(--light);
     text-align: start;
 }
 
 .edit-btn {
     margin-top: 70px;
 }
-
-
 
 .edit-form-wrapper {
     display: flex;
@@ -71,4 +62,39 @@
 .edit-form .save-btn:hover {
     background: var(--primary);
     color: var(--light)
+}
+
+/*TIMELINE CSS*/
+.timeline-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1e0039;
+    width: 70%;
+}
+
+.timeline-wrapper p,
+h2,
+h3,
+h4,
+time,
+summary {
+    color: var(--light);
+}
+
+
+.timeline-wrapper summary {
+    cursor: pointer;
+}
+
+.post-wrapper {
+    width: 100%;
+    border-top: 2px solid #43005c;
+    padding: 0 30px;
+    margin: 30px 0;
+}
+
+.post-btn {
+    display: block;
+    border: none;
 }

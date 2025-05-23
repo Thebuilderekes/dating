@@ -1,3 +1,6 @@
+<?php
+namespace App\Views;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +12,7 @@
     </title>
     <link rel="stylesheet" href="../../app/css/index.css" />
     <link rel="stylesheet" href="../../app/css/signup.css" />
-    <link rel="stylesheet" href="../../app/css/profile.css" />
+<link rel="stylesheet" href="../../app/css/profile.css" />
 
 </head>
 
@@ -33,5 +36,9 @@
         <?= $content ?>
     </main>
  <?php include "footer.php"?>
+
+<script>
+<?=$dateTimeScript?>
+
 </body>
 </html>
