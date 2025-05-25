@@ -6,10 +6,10 @@ textarea {
 .edit-profile-wrapper {
     display: flex;
     justify-content: space-between;
-    background: lavender;
 }
 
-.edit-profile-container {
+.edit-profile-section {
+
     padding: 0 20px;
     display: flex;
     background: #1a0024;
@@ -19,7 +19,7 @@ textarea {
 }
 
 
-.edit-profile-container p {
+.edit-profile-section p {
     color: var(--light);
     text-align: start;
 }
@@ -28,6 +28,9 @@ textarea {
     margin-top: 70px;
 }
 
+
+
+/*EDIT FORM CSS*/
 .edit-form-wrapper {
     display: flex;
     flex-direction: column;
@@ -72,9 +75,9 @@ textarea {
 .timeline-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
     background: #1e0039;
     width: 70%;
+    padding: 0 30px;
 }
 
 .timeline-wrapper p,
@@ -88,31 +91,61 @@ summary {
 
 
 .timeline-wrapper summary {
+    margin: 10px;
     cursor: pointer;
+
 }
 
 .post-wrapper {
     width: 100%;
     border-top: 2px solid #43005c;
-    padding: 30px;
-    margin: 5px 0;
+    margin: 15px 0;
+}
+
+.post-wrapper textarea {
+    background: #1a0024;
+    color: var(--light)
+}
+
+.post-wrapper .post-comment-btn {
+    padding: 5px 10px;
+    font-size: 15px;
+
+}
+
+button[type="submit"] {
+    display: block;
+    margin-top: 10px;
+}
+
+button[type="button"] {
+    display: block;
+    border: none;
+    width: 50px;
+    background: none;
+    border: 1px solid gray;
+    border-radius: 50px;
 }
 
 .comment-wrapper {
     width: 100%;
     border-top: 2px solid #43005c;
-    padding: 10px;
-    margin: 2px 0;
 }
 
+.flex-col {
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
-
-.post-btn {
-    display: block;
-    border: none;
+.flex-col header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .comments_list {
-    background: #2f0143;
-
+    background: #1a0024;
+    margin-left: 30px;
 }

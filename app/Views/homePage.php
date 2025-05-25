@@ -5,7 +5,7 @@ $timeline = include 'timeline.php';
 ob_start();
 ?>
 <div class="edit-profile-wrapper">
-  <section class="edit-profile-container">
+  <section class="edit-profile-section">
     <h2>Welcome, <?= htmlspecialchars($user['username'] ?? 'Guest') ?></h2>
       <h3>About</h3>
       <p class="bio"><?= htmlspecialchars(!empty($user['bio']) ? $user['bio'] : 'Click "edit profile" to start editing your profile.') ?>

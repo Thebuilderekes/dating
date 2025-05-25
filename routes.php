@@ -26,8 +26,8 @@ switch ($uri) {
     case '/signUp':
         $userController->signUp();
         break;
-    case '/profile':
-        $userController->profile();
+    case '/home':
+        $userController->home();
         $postController->getAllPosts();
         break;
     case '/edit_profile':

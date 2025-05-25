@@ -78,7 +78,7 @@ if ($user) {
         $this->userModel->storeRememberToken($user['user_id'], $token, $expiry);
     }
 
-    header("Location: /profile");
+    header("Location: /home");
     exit;
 }
 ```

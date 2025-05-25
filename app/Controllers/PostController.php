@@ -20,7 +20,7 @@ class PostController
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
           $success = $this->postModel->createPost($_SESSION['user_id'], $_POST['content']);
           if($success){
-            header("Location: /profile");
+            header("Location: /home");
             exit;
           } 
         }
@@ -38,7 +38,7 @@ class PostController
        // session_start();
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment'], $_POST['post_id'])) {
             $this->commentModel->addComment($_SESSION['user_id'], $_POST['post_id'], $_POST['comment']);
-            header("Location: /profile");
+            header("Location: /home");
             exit;
         }
     }

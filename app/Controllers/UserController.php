@@ -20,7 +20,7 @@ class UserController extends Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 if ($this->userModel->login($_POST['username'], $_POST['password'])) {
-                    header("Location: /profile");
+                    header("Location: /home");
                     exit;
                 } else {
                     $this->view('login', ['error' => 'Wrong username or password']);
@@ -74,7 +74,7 @@ class UserController extends Controller
                     $_SESSION['user_id'],
                     $_POST['bio']
                 );
-                header("Location: /profile");
+                header("Location: /home");
                 exit;
             }
 
@@ -85,7 +85,7 @@ class UserController extends Controller
         }
     }
 
-    public function profile()
+    public function home()
     {
         if (!isset($_SESSION['user_id'])) {
             header('Location: /login');
@@ -93,7 +93,7 @@ class UserController extends Controller
         }
 
         $user = $this->userModel->getUserById($_SESSION['user_id']);
-        $this->view('profile', ['user' => $user]);
+        $this->view('home', ['user' => $user]);
     }
 
     public function deleteUser()

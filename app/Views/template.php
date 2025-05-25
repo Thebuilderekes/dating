@@ -27,16 +27,18 @@ namespace App\Views;
                  <div class="nav-link flex-center">
                 <li><a href=""><?php echo isset($userName) ? $userName : ''; ?></a></li>
                 <li><a href=""><?php echo isset($logoutUrl) ? $logoutUrl : ''; ?></a></li>
-                <li> <a class="flex-center" href="/profile"><?php echo isset($user) ? "<div class='img-placeholder'></div>" . $user : ' ';?></a></li>
+                <li> <a class="flex-center" href="/home"><?php echo isset($user) ? "<div class='img-placeholder'></div>" . $user : ' ';?></a></li>
                 <li ><a class="btn" href="/<?php echo isset($page) ? $page : ' '?>"><?php echo isset($btn) ? $btn : ' '; ?></a></li>
                 </div>
             </ul>
         </nav>
     </header>
     <main>
-        <?= $content ?>
+        <?= $content; ?>
     </main>
- <?php include "footer.php"?>
-<?=$timelinescript ?>
+ <?php include "footer.php";?>
+
+<?= $toggleComment; ?>
+
 </body>
 </html>
