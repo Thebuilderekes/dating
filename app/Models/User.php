@@ -70,12 +70,12 @@ class User
         }
     }
 
-    public function updateProfile(int $id, string $first_name, string $last_name, string $bio): bool
+    public function updateProfile(int $id, string $bio): bool
     {
         try {
-            $sql = "UPDATE dating_app_user SET first_name = ?, last_name = ?, bio = ? WHERE user_id = ?";
+            $sql = "UPDATE dating_app_user SET bio = ? WHERE user_id = ?";
             $stmt = $this->pdo->prepare($sql);
-            return $stmt->execute([$first_name, $last_name, $bio, $id]);
+            return $stmt->execute([$bio, $id]);
         } catch (\PDOException $e) {
             error_log("Update profile error: " . $e->getMessage());
             return false;

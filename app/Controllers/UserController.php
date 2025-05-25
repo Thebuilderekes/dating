@@ -72,8 +72,6 @@ class UserController extends Controller
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $this->userModel->updateProfile(
                     $_SESSION['user_id'],
-                    $_POST['first_name'],
-                    $_POST['last_name'],
                     $_POST['bio']
                 );
                 header("Location: /profile");

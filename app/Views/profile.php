@@ -2,6 +2,7 @@
 namespace App\Views;
 // Simulate fetching content (e.g., dashboard content)
 $content = include 'profilePage.php';
+$timelinescript = include './app/scripts/timeline.php';
 $user = $user['username'];
 $page = "logout";
 $btn = "Logout";

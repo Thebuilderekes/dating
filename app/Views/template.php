@@ -1,5 +1,6 @@
 <?php
 namespace App\Views;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,9 +37,6 @@ namespace App\Views;
         <?= $content ?>
     </main>
  <?php include "footer.php"?>
-
-<script>
-<?=$dateTimeScript?>
-
+<?=$timelinescript ?>
 </body>
 </html>

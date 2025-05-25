@@ -1,10 +1,15 @@
-.page-wrapper {
+textarea {
+    padding: 10px;
+}
+
+
+.edit-profile-wrapper {
     display: flex;
     justify-content: space-between;
     background: lavender;
 }
 
-.profile-container {
+.edit-profile-container {
     padding: 0 20px;
     display: flex;
     background: #1a0024;
@@ -13,9 +18,8 @@
     align-items: center;
 }
 
-.profile-container h3 {}
 
-.profile-container p {
+.edit-profile-container p {
     color: var(--light);
     text-align: start;
 }
@@ -35,7 +39,7 @@
 }
 
 .edit-form {
-    background: var(--secondary);
+    background: #1e0039;
     border-radius: 20px;
     margin-bottom: 50px;
 }
@@ -90,11 +94,25 @@ summary {
 .post-wrapper {
     width: 100%;
     border-top: 2px solid #43005c;
-    padding: 0 30px;
-    margin: 30px 0;
+    padding: 30px;
+    margin: 5px 0;
 }
+
+.comment-wrapper {
+    width: 100%;
+    border-top: 2px solid #43005c;
+    padding: 10px;
+    margin: 2px 0;
+}
+
+
 
 .post-btn {
     display: block;
     border: none;
+}
+
+.comments_list {
+    background: #2f0143;
+
 }

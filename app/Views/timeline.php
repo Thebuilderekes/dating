@@ -1,7 +1,6 @@
 <?php
-use App\Controllers\PostController;
 use App\Helpers\DateTimeHelper;
-
+use App\Controllers\PostController;
 $postController = new PostController();
 $posts = $postController->getAllPosts();
 $DateTime = new DateTimeHelper();
@@ -11,7 +10,7 @@ ob_start();
 <section class="timeline-wrapper">
   <form method="POST" action="/create_post">
     <h2>Create post</h2>
-    <textarea placeholder="Say something" rows="5" cols="40" name="content" required></textarea>
+    <textarea placeholder="Say something..." rows="3" cols="30" name="content" required></textarea>
     <button class="post-btn btn" type="submit">Post</button>
   </form>
 
@@ -28,17 +27,19 @@ ob_start();
         <small>
           <time datetime="<?= htmlspecialchars($post['created_at']) ?>"><?= $timeOfPost ?></time>
         </small>
-
-      <form method="POST" action="/add_comment">
-        <input type="hidden" name="post_id" value="<?= $post['post_id'] ?>">
-        <input type="text" name="comment" placeholder="Add a comment..." required>
-        <button type="submit">Comment</button>
-      </form>
+<button type="button" class="toggle-comment-btn" data-post-id="<?= $post['post_id'] ?>">💬 Comment</button>
+<div class="comment-form" id="comment-form-<?= $post['post_id'] ?>" style="display: none;">
+  <form method="POST" action="/add_comment" class="comment-form-element">
+    <input type="hidden" name="post_id" value="<?= $post['post_id'] ?>">
+    <textarea type="text" rows="2" cols="20" name="comment" placeholder="Add a comment..." required></textarea>
+    <button type="submit">Comment</button>
+  </form>
+</div>
 
       <?php if (!empty($comments)): ?>
         <details>
           <summary>View comments (<?= count($comments) ?>)</summary>
-          <ul>
+          <ul class="comments_list">
             <?php foreach ($comments as $comment): ?>
               <li>
                 <article class="comment-wrapper" aria-labelledby="comment-author-<?= $comment['comment_id'] ?>">

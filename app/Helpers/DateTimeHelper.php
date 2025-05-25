@@ -5,7 +5,7 @@ namespace App\Helpers;
 
 class DateTimeHelper
 {
-    public static function timeAgo(string $datetime, bool $full = false, string $timezone = 'UTC'): string
+    public static function timeAgo(string $datetime, bool $full = false, string $timezone = 'Africa/Lagos'): string
     {
         $now = new \DateTime('now', new \DateTimeZone($timezone));
         $ago = new \DateTime($datetime, new \DateTimeZone($timezone));
@@ -30,13 +30,13 @@ class DateTimeHelper
         foreach ($components as $key => $value) {
             if ($value > 0) {
                 $unit = match ($key) {
-                    'y' => 'yr',
+                    'y' => 'year',
                     'm' => 'month',
-                    'w' => 'wk',
+                    'w' => 'week',
                     'd' => 'day',
-                    'h' => 'hr',
-                    'i' => 'min',
-                    's' => 's',
+                    'h' => 'hour',
+                    'i' => 'minute',
+                    's' => 'second',
                 };
                 $strings[] = "$value $unit" . ($value > 1 ? 's' : '');
             }
@@ -49,3 +49,4 @@ class DateTimeHelper
         return $strings ? implode(', ', $strings) . ' ago' : 'just now';
     }
 }
+
