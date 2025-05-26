@@ -1,7 +1,7 @@
 <?php
 Namespace App\Models;
 use App\Core\Database;
-require_once __DIR__ . "./../Core/Database.php";
+//require_once __DIR__ . "./../Core/Database.php";
 
 
 class User

@@ -1,10 +1,10 @@
 <?php
 Namespace App\Views;
 
-$timeline = include 'timeline.php';
+$timeline = include 'timeline.view.php';
 ob_start();
 ?>
-<div class="edit-profile-wrapper">
+<div class="home-wrapper">
   <section class="edit-profile-section">
     <h2>Welcome, <?= htmlspecialchars($user['username'] ?? 'Guest') ?></h2>
       <h3>About</h3>

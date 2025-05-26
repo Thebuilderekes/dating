@@ -13,16 +13,17 @@ namespace App\Views;
     </title>
     <link rel="stylesheet" href="../../app/css/index.css" />
     <link rel="stylesheet" href="../../app/css/signup.css" />
-<link rel="stylesheet" href="../../app/css/profile.css" />
+<link rel="stylesheet" href="../../app/css/home.css" />
+<link rel="stylesheet" href="../../app/css/admin-login.css" />
 
 </head>
 
-<body>
+<body class="admin-body">
     <header>
         <nav>
             <ul>
                 <div class="nav-logo-container">
-                     <li><a href="/"><?php echo isset($logo) ? $logo : ' '; ?></a></li>
+                     <li><a href="<?php echo isset($home) ? '/' . $home : "/"; ?>"><?php echo isset($logo) ? $logo : ' '; ?></a></li>
                 </div>
                  <div class="nav-link flex-center">
                 <li><a href=""><?php echo isset($userName) ? $userName : ''; ?></a></li>
@@ -36,9 +37,10 @@ namespace App\Views;
     <main>
         <?= $content; ?>
     </main>
- <?php include "footer.php";?>
-
-<?= $toggleComment; ?>
+ <?php include "footer.view.php";?>
+<script src="./app/Scripts/toggleComment.js"></script>
+<script src="./app/Scripts/dashboard.js"></script>
+<script src="./app/Scripts/filter.js"></script>
 
 </body>
 </html>

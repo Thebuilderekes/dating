@@ -91,6 +91,6 @@ public function login()
   public function logout()
   {
     session_destroy();
-    header("Location: /admin/login");
+    header("Location: /admin_login");
   }
 }

@@ -1,0 +1,45 @@
+   body {
+     padding: 0 var(--spacing-20);
+   }
+
+   .logout_btn {
+     text-decoration: none;
+     padding: 8px 10px;
+     margin-bottom: 15px;
+     font-size: var(--spacing-20);
+     display: inline-block;
+     background-color: red;
+     color: white;
+   }
+
+   table {
+     border-collapse: collapse;
+     width: 100%;
+   }
+
+   th,
+   td {
+     border: 1px solid #ccc;
+     padding: 8px;
+     text-align: left;
+   }
+
+   table tr:nth-child(even) {
+     background-color: #f2f2f2;
+     /* Grey for odd rows */
+   }
+
+   .error {
+     color: red;
+     font-weight: 600;
+   }
+
+   #searchInput {
+     display: block;
+     margin-bottom: 10px;
+     padding: 8px;
+   }
+
+   #noResults {
+     display: none;
+   }

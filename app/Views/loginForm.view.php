@@ -3,7 +3,7 @@ Namespace App\Views;
 ob_start();
 ?>
 
-<div class="wrapper">
+<div class="login-section-wrapper wrapper">
   <section class="fancy-bg">
     <h1>Wecome Back</h1>
   </section>

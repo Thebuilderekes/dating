@@ -1,14 +1,32 @@
+.fancy-bg {
+  display: none;
+}
+
+@media (min-width: 850px) {
+  .fancy-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 95px;
+    width: 50%;
+    height: 100vh;
+    background: lavender;
+
+  }
+
+}
+
 .container {
   position: relative;
   width: 200px;
   height: 200px;
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-20);
 }
 
 .square {
   width: 100px;
   height: 100px;
-  background: fuchsia;
+  background: var(--accent);
   position: absolute;
   top: 60%;
   left: 50%;

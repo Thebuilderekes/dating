@@ -1,13 +1,10 @@
 <?php
 Namespace App\Views;
 // Simulate fetching content (e.g., dashboard content)
-$user = $user['username'];
-$content = include 'edit_profileform.php';
-$btn = "Logout";
+$content = include 'loginForm.view.php';
+$btn = "Sign Up";
+$page = "signUp";
 $logo = "Meetand";
-$pageTitle = $user . " - edit profile";
+$pageTitle = "log in - Meetand";
 // Include the template and pass the content to be injected
-include 'template.php';
-
-
-
+include 'template.view.php';

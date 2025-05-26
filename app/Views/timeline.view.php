@@ -1,4 +1,5 @@
 <?php
+namespace App\Views;
 use App\Helpers\DateTimeHelper;
 use App\Controllers\PostController;
 $postController = new PostController();
@@ -27,9 +28,9 @@ ob_start();
         </small>
       </header>
         <p><?= htmlspecialchars($post['content']) ?></p>
-      <button type="button" class="toggle-comment-btn" data-target="#comment-form"
+      <button type="button" class="toggle-comment-btn" data-target="#comment-form-<?= $post['post_id'] ?>"
   aria-expanded="false" class="toggle-comment-btn" data-post-id="<?= $post['post_id'] ?>">💬</button>
-      <div class="comment-form" id="comment-form" hidden>
+<div class="comment-form" id="comment-form-<?= $post['post_id'] ?>" hidden>
         <form method="POST" action="/add_comment" class="comment-form-element">
           <input type="hidden" name="post_id" value="<?= $post['post_id'] ?>">
           <textarea type="text" rows="2" cols="20" name="comment" placeholder="Add a comment..." required></textarea>

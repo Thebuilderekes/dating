@@ -2,14 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 :root {
 
   --light: lavender;
   --primary: darkviolet;
-  --secondary: fuchsia;
+  --dark-bg: #1a0024;
+  --mid-dark: #1e0039;
+  --accent: fuchsia;
   --bg-light: #e3dddd;
+
+
+  --spacing-10: 10px;
+  --spacing-20: 20px;
+  --spacing-50: var(--spacing-50);
 }
 
 
@@ -35,6 +43,10 @@ a {
   color: whitesmoke;
 }
 
+.border-none {
+  border: none;
+}
+
 .flex-center {
   display: flex;
   gap: 0.5rem;
@@ -42,12 +54,11 @@ a {
 }
 
 li {
-  list-style: none;
   padding: 0 10px;
 }
 
 nav {
-  padding: 20px;
+  padding: var(--spacing-20);
   background: var(--bg-light);
 }
 
@@ -78,7 +89,7 @@ nav .nav-link {
 }
 
 .btn:hover {
-  background: fuchsia;
+  background: var(--accent);
   color: black;
 }
 
@@ -90,7 +101,7 @@ nav .img-placeholder {
 }
 
 .error {
-  font-size: 20px;
+  font-size: var(--spacing-20);
   font-weight: 600;
   background: #1e0039;
   color: red;
@@ -106,33 +117,15 @@ nav .img-placeholder {
 h1 {
   color: var(--primary);
   font-size: 40px;
-  margin: 20px 0;
+  margin: var(--spacing-20) 0;
   text-align: center;
 }
 
 h2 {
   font-size: 36px;
   text-align: center;
-  padding: 20px 0;
+  padding: var(--spacing-20) 0;
 
-
-}
-
-.fancy-bg {
-  display: none;
-}
-
-@media (min-width: 850px) {
-  .fancy-bg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 95px;
-    width: 50%;
-    height: 100vh;
-    background: lavender;
-
-  }
 
 }
 
@@ -140,7 +133,7 @@ h2 {
   width: 100%;
   color: whitesmoke;
   display: flex;
-  background: rebeccapurple;
+  background: var(--dark-bg);
   flex-direction: column;
   align-items: center;
 }
@@ -150,8 +143,8 @@ h2 {
     width: 50%;
     justify-content: center;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: var(--spacing-20);
+    padding-right: var(--spacing-20);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 }
@@ -159,15 +152,15 @@ h2 {
 
 .form-container .submit-btn-container {
   width: 100%;
-  height: 50px;
+  height: var(--spacing-50);
   display: flex;
   justify-content: center;
 }
 
 .form-container .submit-btn-container .btn {
   color: var(--primary);
-  width: 150px;
-  font-size: 20px;
+  width: var(--spacing-50);
+  font-size: var(--spacing-20);
   padding: 5px 10px;
   border: none;
   background: lavender;
@@ -176,31 +169,33 @@ h2 {
 
 .form-container .submit-btn-container .btn:hover {
   color: lavender;
-  background: fuchsia;
+  background: var(--accent);
 }
 
 .form {
-  padding: 50px 20px;
+  margin: 50px 0;
+  padding: var(--spacing-50) var(--spacing-20);
   width: 500px;
   border: 3px solid white;
 }
 
 
+
 @media (min-width: 850px) {
   .form {
-    padding: 15px 20px;
+    padding: 15px var(--spacing-20);
   }
 }
 
 .form input {
-  font-size: 20px;
+  font-size: var(--spacing-20);
   width: 100%;
   height: 45px;
   border: none;
   border-radius: 15px;
   display: block;
   margin: 5px 0;
-  padding-inline: 15px;
+  padding: 0 15px;
 }
 
 .form p {
@@ -214,13 +209,13 @@ h2 {
 }
 
 label {
-  font-size: 20px;
+  font-size: var(--spacing-20);
   font-weight: 600;
 }
 
 footer {
   background: var(--bg-light);
-  padding: 20px;
+  padding: var(--spacing-20);
   text-align: center;
   background: white;
   position: sticky;

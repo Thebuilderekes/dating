@@ -1,4 +1,3 @@
-<script>
 
 document.addEventListener("DOMContentLoaded", () => {
   // Toggle comment form on button click
@@ -45,6 +44,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-</script>
 
 
