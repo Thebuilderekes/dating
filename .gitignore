@@ -1,7 +1,7 @@
 
 # Ignore the vendor directory (Composer dependencies)
 vendor/
-
+TODO.md
 # Ignore Composer lock file if you prefer not to lock the dependencies (not recommended)
 # composer.lock
 
