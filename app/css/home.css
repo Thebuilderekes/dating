@@ -8,16 +8,45 @@ textarea {
     overflow: hidden;
 }
 
-.edit-profile-section {
-    padding: 0 var(--spacing-20);
-    display: flex;
-    background: var(--mid-dark);
-    width: 25%;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
+@media(min-width: 800px) {
+    .home-wrapper {
+        flex-direction: row-reverse;
+    }
 }
 
+
+.sidebar {
+    display: flex;
+    background: var(--mid-dark);
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    padding: 61px var(--spacing-20);
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    z-index: 49;
+    transition: right 0.3s ease-in-out;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+nav #closeMenuBtn {
+    background: none;
+    margin: 20px 0;
+    color: var(--light);
+    font-size: var(--fs-)
+}
+
+@media(min-width: 800px) {
+    .sidebar {
+        right: -300px;
+        width: 300px;
+    }
+}
 
 .edit-profile-section p {
     color: var(--light);
@@ -42,14 +71,19 @@ textarea {
 }
 
 .edit-form {
-    background: #1e0039;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: var(--spacing-20);
+    background: var(--dark-bg);
     border-radius: var(--spacing-20);
-    margin-bottom: var(--spacing-50);
+    margin: var(--spacing-50);
 }
 
 
 .edit-form label {
-    color: var(--light)
+    color: var(--light);
+    margin: var(--spacing-20) 0;
 }
 
 .edit-form textarea {
@@ -72,9 +106,20 @@ textarea {
 }
 
 /*TIMELINE CSS*/
-button[type="submit"] {
+.delete-btn {
+    background: red;
+    border: none;
+    color: var(--light);
+    padding: 5px 10px;
+}
+
+.delete-btn:hover {
+    background: var(--mid-dark);
+}
+
+.create-post-btn,
+.post-comment-btn {
     display: block;
-    margin-top: 10px;
 }
 
 button[type="button"] {
@@ -116,12 +161,11 @@ summary {
 .timeline-wrapper summary {
     margin: 10px;
     cursor: pointer;
-
 }
 
 .post-wrapper {
     width: 100%;
-    border-top: 2px solid #43005c;
+    border-top: 2px solid var(--mid-dark);
     margin: 15px 0;
 }
 
@@ -133,13 +177,12 @@ summary {
 .post-wrapper .post-comment-btn {
     padding: 5px 10px;
     font-size: 15px;
-
 }
 
 
 .comment-wrapper {
     width: 100%;
-    border-top: 2px solid #43005c;
+    border-top: 2px solid var(--mid-dark);
 }
 
 .flex-col {
@@ -156,6 +199,6 @@ summary {
 }
 
 .comments_list {
-    background: var(--dark-bg);
+    background: var(--mid-dark);
     margin-left: 30px;
 }

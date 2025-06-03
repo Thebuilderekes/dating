@@ -6,4 +6,4 @@ $page = "admin_login";
 $btn = "login";
 $logo = "Meetand";
 $pageTitle ="Meetand - Admin Login";
-include __DIR__ . ('/../template.view.php');
+include __DIR__ . ('/../template.php');

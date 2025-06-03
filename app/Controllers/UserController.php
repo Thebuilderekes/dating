@@ -60,7 +60,7 @@ class UserController extends Controller
         }
     }
 
-    public function editProfile()
+    public function editProfile(): void
     {
 
         if (!isset($_SESSION['user_id'])) {
@@ -96,7 +96,7 @@ class UserController extends Controller
         $this->view('home', ['user' => $user]);
     }
 
-    public function deleteUser()
+    public function deleteUser(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
             $userId = $_POST['delete_id'];

@@ -51,4 +51,16 @@ class Post
             return false;
         }
     }
+
+public function deletePost(int $postId): bool
+{
+    try {
+        $sql = "DELETE FROM posts WHERE post_id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([$postId]);
+    } catch (\PDOException $e) {
+        error_log("Delete post error: " . $e->getMessage());
+        return false;
+    }
+}
 }

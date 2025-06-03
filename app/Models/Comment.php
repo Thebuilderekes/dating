@@ -40,4 +40,26 @@ class Comment
             return [];
         }
     }
+    public function getCommentById($id)
+    {
+     $sql = "SELECT * FROM comments WHERE comment_id = ?";    
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute([$id]);
+    return $stmt->fetch();
+}
+
+
+public function deleteComment(int $commentId): bool
+{
+    try {
+        $sql = "DELETE FROM comments WHERE comment_id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([$commentId]);
+    } catch (\PDOException $e) {
+        error_log("Delete comment error: " . $e->getMessage());
+        return false;
+    }
+}
+
+
 }

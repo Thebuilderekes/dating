@@ -30,7 +30,29 @@ class PostController
     {
         $posts = $this->postModel->getAllPosts();
         return $posts;
-        //include __DIR__ . '/../Views/timeline.php'; // Loads HTML view
+    }
+    public function deletePost(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['post_id'])) {
+            $post = $this->postModel->getPostById($_POST['post_id']);
+            if ($post && $post['user_id'] === $_SESSION['user_id']) {
+                $this->postModel->deletePost($_POST['post_id']);
+            }
+            header("Location: /home");
+            exit;
+        }
+    }
+
+    public function deleteComment(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comment_id'])) {
+            $comment = $this->commentModel->getCommentById($_POST['comment_id']);
+            if ($comment && $comment['user_id'] === $_SESSION['user_id']) {
+                $this->commentModel->deleteComment($_POST['comment_id']);
+            }
+            header("Location: /home");
+            exit;
+        }
     }
 
     public function addComment(): void

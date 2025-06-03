@@ -165,4 +165,40 @@ Here’s how you can structure it:
 ---
 
 ## TESTING
+To find out which `php.ini` file your system is currently using, run this command in your terminal:
+
+```bash
+php --ini
+```
+
+### 🔍 Output Example:
+
+```text
+Configuration File (php.ini) Path: /etc/php/8.1/cli
+Loaded Configuration File:         /etc/php/8.1/cli/php.ini
+Scan for additional .ini files in: /etc/php/8.1/cli/conf.d
+```
+
+* **`Loaded Configuration File`** is the one currently in use.
+* **CLI (Command Line Interface)** vs. **Web Server (Apache/Nginx)** may use different `php.ini` files.
+
+---
+
+### 🧪 Double-Check with `phpinfo()` for Web Server
+
+If you're debugging PHP in a web context (e.g., with Xdebug for browser-triggered requests), create a file called `phpinfo.php` in your web root:
+
+```php
+<?php phpinfo(); ?>
+```
+
+Then open it in your browser (e.g., `http://localhost/phpinfo.php`) and look for:
+
+* **Loaded Configuration File**
+
+This shows the `php.ini` used by Apache, Nginx + PHP-FPM, or whatever web server you're using.
+
+---
+
+Let me know if you're running PHP via Docker or a specific environment — it can change where `php.ini` is loaded from.
 

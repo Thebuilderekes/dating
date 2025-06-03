@@ -4,6 +4,8 @@ ob_start();
 ?>
   <h1>Admin Panel</h1>
   <a class="logout_btn" href="/admin_logout">Logout</a>
+
+<!-- filter users by characters search input --->
 <input type="text" id="searchInput" placeholder="Search users..." >
 <p id="noResults" class="error">No users match your search.</p>
 

@@ -6,5 +6,5 @@ $page = "admin_logout";
 $btn = "Logout";
 $logo = "Meetand";
 $pageTitle = "Meetand - admin dashboard";
-include __DIR__ . ('/../template.view.php');
+include __DIR__ . ('/../template.php');
 

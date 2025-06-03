@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   // Toggle comment form on button click
   document.querySelectorAll(".toggle-comment-btn").forEach(button => {
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     button.addEventListener("click", () => {
       const isHidden = target.hidden;
-       console.log("btn working")
+      console.log("btn working")
       target.hidden = !isHidden;
       button.setAttribute("aria-expanded", String(isHidden));
 
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Submit post on Enter (single-line)
   const postTextarea = document.querySelector("form[action='/create_post'] textarea");
   if (postTextarea) {
-    postTextarea.addEventListener("keydown", function (e) {
+    postTextarea.addEventListener("keydown", function(e) {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
         this.form.submit();
@@ -36,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Submit comment on Enter (single-line)
   document.querySelectorAll(".comment-form-element textarea").forEach(textarea => {
-    textarea.addEventListener("keydown", function (e) {
+    textarea.addEventListener("keydown", function(e) {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
         this.form.submit();

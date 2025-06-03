@@ -6,7 +6,6 @@
 }
 
 :root {
-
   --light: lavender;
   --primary: darkviolet;
   --dark-bg: #1a0024;
@@ -14,14 +13,33 @@
   --accent: fuchsia;
   --bg-light: #e3dddd;
 
-
   --spacing-10: 10px;
   --spacing-20: 20px;
-  --spacing-50: var(--spacing-50);
+  --spacing-50: 50px;
+
+  /*font sizing*/
+  --fs-80: 7rem;
+  /*80px*/
+  --fs-64: 4rem;
+  /*64px*/
+  --fs-48: 3rem;
+  /*48px*/
+  --fs-32: 2rem;
+  /*32px*/
+  --fs-30: 1.875rem;
+  /*30px*/
+  --fs-31: 1.9rem;
+  /*30.4px*/
+  --fs-28: 1.7rem;
+  /*27.2px*/
+  --fs-24: 1.2rem;
+  /*24px*/
+  --fs-18: 1.125px;
+  /*18px*/
+  --fs-default: 1rem;
+  /*16px*/
+
 }
-
-
-
 
 html {
   width: 100%;
@@ -43,8 +61,24 @@ a {
   color: whitesmoke;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+}
+
+textarea {
+
+  font-family: Helvetica, sans-serif;
+}
+
 .border-none {
   border: none;
+}
+
+.flex-gap-center {
+  display: flex;
+  align-content: center;
+  gap: 0.5rem;
 }
 
 .flex-center {
@@ -53,57 +87,10 @@ a {
   align-items: center;
 }
 
-li {
-  padding: 0 10px;
-}
-
-nav {
-  padding: var(--spacing-20);
-  background: var(--bg-light);
-}
-
-nav ul {
-  display: flex;
-  justify-content: space-between;
-}
-
-nav li a {
-  color: var(--primary);
-}
-
-nav ul li:first-child {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-nav .nav-link {
-  display: flex;
-  gap: 2rem;
-}
-
-
-.btn {
-  background: var(--primary);
-  padding: 10px 15px;
-  color: whitesmoke;
-}
-
-.btn:hover {
-  background: var(--accent);
-  color: black;
-}
-
-nav .img-placeholder {
-  background: var(--primary);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
-
 .error {
   font-size: var(--spacing-20);
   font-weight: 600;
-  background: #1e0039;
+  background: var(--dark-bg);
   color: red;
 }
 
@@ -113,6 +100,65 @@ nav .img-placeholder {
   display: flex;
   overflow-y: hidden;
 }
+
+li {
+  padding: 0 10px;
+}
+
+
+nav.main-nav {
+  padding: var(--spacing-20);
+  position: fixed;
+  width: 100%;
+  background: var(--bg-light);
+  z-index: 60;
+}
+
+nav.main-nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav.main-nav .nav-link-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+nav.main-nav ul li a {
+  color: var(--primary);
+}
+
+nav.main-nav ul li a.btn {
+  color: var(--light);
+}
+
+nav.main-nav ul li:first-child {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+nav.main-nav ul li button#toggleSidebar {
+  background: none;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+nav.main-nav ul li button#toggleSidebar:hover {
+  color: var(--dark-bg);
+}
+
+.btn {
+  background: var(--primary);
+  padding: 10px 15px;
+  color: var(--light);
+}
+
+.btn:hover {
+  background: var(--dark-bg);
+  color: black;
+}
+
 
 h1 {
   color: var(--primary);
@@ -131,7 +177,7 @@ h2 {
 
 .form-container {
   width: 100%;
-  color: whitesmoke;
+  color: var(--light);
   display: flex;
   background: var(--dark-bg);
   flex-direction: column;
@@ -163,12 +209,12 @@ h2 {
   font-size: var(--spacing-20);
   padding: 5px 10px;
   border: none;
-  background: lavender;
+  background: var(--light);
   cursor: pointer;
 }
 
 .form-container .submit-btn-container .btn:hover {
-  color: lavender;
+  color: var(--light);
   background: var(--accent);
 }
 
@@ -198,6 +244,11 @@ h2 {
   padding: 0 15px;
 }
 
+label {
+  font-size: var(--spacing-20);
+  font-weight: 600;
+}
+
 .form p {
   padding: 15px;
   font-size: 18px;
@@ -208,10 +259,6 @@ h2 {
   color: white;
 }
 
-label {
-  font-size: var(--spacing-20);
-  font-weight: 600;
-}
 
 footer {
   background: var(--bg-light);

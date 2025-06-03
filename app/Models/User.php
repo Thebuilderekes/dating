@@ -1,8 +1,6 @@
 <?php
 Namespace App\Models;
 use App\Core\Database;
-//require_once __DIR__ . "./../Core/Database.php";
-
 
 class User
 {
@@ -39,6 +37,7 @@ class User
             if ($user && password_verify($password, $user['password'])) {
                 $_SESSION['user'] = $user;
                 $_SESSION['user_id'] = $user['user_id']; // ✅ add this line
+                $_SESSION['is_admin'] = $user['is_admin']; // 🟡 Added this recently line on 1st june
                 return $user;
             }
         } catch (\PDOException $e) {

@@ -23,6 +23,9 @@ switch ($uri) {
     case '/login':
         $userController->login();
         break;
+    case '/logout':
+        $userController->logout();
+        break;
     case '/signUp':
         $userController->signUp();
         break;
@@ -36,11 +39,14 @@ switch ($uri) {
     case '/create_post':
         $postController->createPost();
         break;
+    case '/delete_post':
+        $postController->deletePost();
+        break;
     case '/add_comment':
         $postController->addComment();
         break;
-    case '/logout':
-        $userController->logout();
+    case '/delete_comment':
+        $postController->deleteComment();
         break;
     default:
         echo "404 Not Found"; // controller->404();

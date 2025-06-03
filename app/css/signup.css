@@ -10,7 +10,7 @@
     padding-top: 95px;
     width: 50%;
     height: 100vh;
-    background: lavender;
+    background: var(--light);
 
   }
 
