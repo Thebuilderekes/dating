@@ -2,6 +2,7 @@
 # Ignore the vendor directory (Composer dependencies)
 vendor/
 TODO.md
+phpstan.neon
 # Ignore Composer lock file if you prefer not to lock the dependencies (not recommended)
 # composer.lock
 
