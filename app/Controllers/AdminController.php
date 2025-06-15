@@ -16,7 +16,7 @@ class AdminController extends Controller
   }
 
 
-public function login()
+public function login(): mixed
 {
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
@@ -24,7 +24,7 @@ public function login()
 
     if (!$username || !$password) {
       $this->view('admin/login', ['error' => 'Username and password are required.']);
-      return;
+      return null;
     }
 
     try {
@@ -45,7 +45,7 @@ public function login()
 }
 
 
-  public function dashboard()
+  public function dashboard(): mixed
   {
       if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
           $deleteId = (int) $_POST['delete_id'];
@@ -73,7 +73,7 @@ public function login()
 
  }
 
-  public function deleteUser($id)
+  public function deleteUser($id):void
   {
     if (!isset($_SESSION['user_id'])) {
       header("Location: /login");
@@ -88,7 +88,7 @@ public function login()
     }
   }
 
-  public function logout()
+  public function logout(): void
   {
     session_destroy();
     header("Location: /admin_login");

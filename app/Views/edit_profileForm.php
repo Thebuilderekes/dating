@@ -1,7 +1,9 @@
 <?php
 Namespace App\Views;
+$user = $user ?? '';
 ob_start();
 
+$user = $user ?? '';
 ?>
 <section class="edit-form-wrapper">
     <h2 class="edit-form-heading">Edit Profile</h2>

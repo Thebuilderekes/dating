@@ -25,8 +25,12 @@ class PostController
           } 
         }
     }
+    /*
+     * 
+        * */
+   
+    public function getAllPosts(): array
 
-    public function getAllPosts():array
     {
         $posts = $this->postModel->getAllPosts();
         return $posts;

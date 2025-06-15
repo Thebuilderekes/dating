@@ -1,6 +1,14 @@
 <?php
 namespace App\Views;
-
+$content = $content ?? '';
+$logoutUrl = $logoutUrl ?? '';
+$home = $home ?? '';
+$userName = $userName ?? '';
+$user = $user ?? '';
+$page = $page ?? '';
+$btn = $btn ?? '';
+$logo = $logo ?? '';
+$pageTitle = $pageTitle ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +17,7 @@ namespace App\Views;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?php echo isset($pageTitle) ? $pageTitle : 'Default Title'; ?>
+        <?php echo $pageTitle ? $pageTitle : 'Default Title'; ?>
     </title>
     <link rel="stylesheet" href="../../app/css/index.css" />
     <link rel="stylesheet" href="../../app/css/signup.css" />
@@ -23,13 +31,13 @@ namespace App\Views;
         <nav class="main-nav">
             <ul>
                 <div class="nav-logo-container">
-                     <li><a href="<?php echo isset($home) ? '/' . $home : "/"; ?>"><?php echo isset($logo) ? $logo : ' '; ?></a></li>
+                     <li><a href="<?php echo $home ? '/' . $home : "/"; ?>"><?php echo $logo ? $logo : ' '; ?></a></li>
                 </div>
                  <div class="nav-link-wrapper flex-center">
-                <li><a href=""><?php echo isset($userName) ? $userName : ''; ?></a></li>
-                <li><a href=""><?php echo isset($logoutUrl) ? $logoutUrl : ''; ?></a></li>
-                <li> <button id="toggleSidebar"><?php echo isset($user) ? $user  : '';?> </button></li>
-                <li ><a class="btn" href="/<?php echo isset($page) ? $page : ' '?>"><?php echo isset($btn) ? $btn : ' '; ?></a></li>
+                <li><a href=""><?php echo $userName ; ?></a></li>
+                <li><a href=""><?php echo $logoutUrl; ?></a></li>
+                <li> <button id="toggleSidebar"><?php echo $user;?> </button></li>
+                <li ><a class="btn" href="/<?php echo $page;?>"><?php echo $btn; ?></a></li>
                 </div>
             </ul>
         </nav>

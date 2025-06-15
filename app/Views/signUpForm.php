@@ -1,5 +1,6 @@
 <?php
 namespace App\Views;
+$error = $error ?? '';
 ob_start();
 ?>
 <div class="wrapper">
@@ -11,7 +12,7 @@ ob_start();
         <div class="heart"></div>
         <div class="square"></div>
      </div>
-    <h1>Connect with kindred spirits <br> And Possibly find Love.</h1>
+    <h1>Connect with kindred spirits <br> Build Relationships.</h1>
   </section>
   <section class="form-container">
     <form class="form" method="POST">

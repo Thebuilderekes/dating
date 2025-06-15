@@ -12,7 +12,7 @@ class Comment
         $this->pdo = Database::connect();
     }
 
-    public function addComment(int $userId, int $postId, string $comment): bool
+    public function addComment(int $userId, int $postId, string $comment): mixed
     {
         try {
             $sql = "INSERT INTO comments (user_id, post_id, comment) VALUES (?, ?, ?)";
@@ -49,7 +49,7 @@ class Comment
 }
 
 
-public function deleteComment(int $commentId): bool
+public function deleteComment(int $commentId): mixed
 {
     try {
         $sql = "DELETE FROM comments WHERE comment_id = ?";

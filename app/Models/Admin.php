@@ -13,7 +13,7 @@ class Admin
         $this->pdo = Database::connect();
     }
 
-    public function getAllUsers(): array|false
+    public function getAllUsers(): mixed
     {
         try {
             $stmt = $this->pdo->prepare("SELECT user_id, username, email FROM dating_app_user");
@@ -28,7 +28,7 @@ class Admin
     }
 
 
-    public function deleteUserById(int $id): bool
+    public function deleteUserById(int $id): mixed
     {
         try {
             $stmt = $this->pdo->prepare("DELETE FROM dating_app_user WHERE user_id = :id");
@@ -39,7 +39,7 @@ class Admin
         }
     }
 
-    public function getUserById(int $id): array|false
+    public function getUserById(int $id): mixed
     {
         try {
             $sql = "SELECT * FROM dating_app_user WHERE user_id = ?";

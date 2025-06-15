@@ -1,5 +1,6 @@
 <?php
 Namespace App\Views;
+$error = $error ?? '';
 ob_start();
 ?>
 
@@ -23,7 +24,7 @@ ob_start();
         <button class="btn" type="submit" id="submit">Login</button>
       </div>
 
-      <p>Dont have an account? <a href="/signUp">signUp</a> </p>
+      <p class="have-account">Dont have an account? <a href="/signUp">signUp</a> </p>
     </form>
 </div>
 <?php

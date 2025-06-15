@@ -8,12 +8,6 @@ textarea {
     overflow: hidden;
 }
 
-@media(min-width: 800px) {
-    .home-wrapper {
-        flex-direction: row-reverse;
-    }
-}
-
 
 .sidebar {
     display: flex;
@@ -57,7 +51,16 @@ nav #closeMenuBtn {
     margin-top: 70px;
 }
 
+.edit-profile-section-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-10);
+}
 
+.edit-profile-section-details a {
+    text-align: center;
+
+}
 
 /*EDIT FORM CSS*/
 .edit-form-wrapper {
@@ -131,6 +134,10 @@ button[type="button"] {
     border-radius: 50px;
 }
 
+.home-wrapper aside {
+    padding: var(--spacing-20);
+    background: var(--mid-dark);
+}
 
 .timeline-wrapper {
     display: flex;

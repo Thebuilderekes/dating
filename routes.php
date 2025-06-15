@@ -9,7 +9,7 @@ $adminController = new AdminController();
 $postController = new PostController();
 switch ($uri) {
     case '/':
-        $userController->login();
+        $userController->signUp();
         break;
     case '/admin_login':
         $adminController->login();
@@ -33,7 +33,7 @@ switch ($uri) {
         $userController->home();
         $postController->getAllPosts();
         break;
-    case '/edit_profile':
+    case '/edit_bio':
         $userController->editProfile();
         break;
     case '/create_post':

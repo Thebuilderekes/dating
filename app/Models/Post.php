@@ -12,7 +12,7 @@ class Post
         $this->pdo = Database::connect();
     }
 
-    public function createPost(int $userId, string $content): bool
+    public function createPost(int $userId, string $content): mixed
     {
         try {
             $sql = "INSERT INTO posts (user_id, content) VALUES (?, ?)";
@@ -24,7 +24,7 @@ class Post
         }
     }
 
-    public function getAllPosts(): array
+    public function getAllPosts(): mixed
     {
         try {
             $sql = "SELECT posts.*, dating_app_user.username 
@@ -52,7 +52,7 @@ class Post
         }
     }
 
-public function deletePost(int $postId): bool
+public function deletePost(int $postId): mixed
 {
     try {
         $sql = "DELETE FROM posts WHERE post_id = ?";

@@ -1,5 +1,5 @@
 <?php
-Namespace App\Core;
+namespace App\Core;
 class Controller
 {
     public function view($page, $data = []): void

@@ -11,7 +11,7 @@ class User
         $this->pdo = Database::connect();
     }
 
-    public function signUp(string $username, string $email, string $password): bool
+    public function signUp(string $username, string $email, string $password): mixed
     {
         try {
             $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -24,7 +24,7 @@ class User
         }
     }
 
-    public function login(string $username, string $password)
+    public function login(string $username, string $password): mixed
     {
         try {
             $sql = "SELECT * FROM dating_app_user WHERE username = ?";
@@ -56,7 +56,7 @@ class User
         }
     }
 
-    public function getUserById(int $id): array|false
+    public function getUserById(int $id): mixed
     {
         try {
             $sql = "SELECT * FROM dating_app_user WHERE user_id = ?";

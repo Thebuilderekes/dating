@@ -24,7 +24,7 @@ class UserController extends Controller
                     exit;
                 } else {
                     $this->view('login', ['error' => 'Wrong username or password']);
-                    return $user;
+                    //return $user;
                 }
             } catch (\Exception $e) {
                 $this->view('login', ['error' => 'An error occurred: ' . $e->getMessage()]);

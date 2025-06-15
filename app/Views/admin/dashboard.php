@@ -1,6 +1,7 @@
 <?php 
 namespace App\Views\admin;
 ob_start();
+$users = $users ?? '';
 ?>
   <h1>Admin Panel</h1>
   <a class="logout_btn" href="/admin_logout">Logout</a>
@@ -10,7 +11,7 @@ ob_start();
 <p id="noResults" class="error">No users match your search.</p>
 
   <?php if (is_array($users) && !empty($users)): ?>
-    <table id ="myTabv">
+    <table id ="myTab">
       <thead>
         <tr>
           <th>ID</th>
