@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Helpers;
@@ -38,15 +39,14 @@ class DateTimeHelper
                     'i' => 'minute',
                     's' => 'second',
                 };
-                $strings[] = "$value $unit" . ($value > 1 ? 's' : '');
+                $strings[] = "$value $unit".($value > 1 ? 's' : '');
             }
         }
 
-        if (!$full) {
+        if (! $full) {
             $strings = array_slice($strings, 0, 1);
         }
 
-        return $strings ? implode(', ', $strings) . ' ago' : 'just now';
+        return $strings ? implode(', ', $strings).' ago' : 'just now';
     }
 }
-

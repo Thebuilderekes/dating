@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Toggle comment form on button click
-  document.querySelectorAll(".toggle-comment-btn").forEach(button => {
+  document.querySelectorAll(".make-comment-btn").forEach(button => {
     const targetSelector = button.dataset.target;
     const target = document.querySelector(targetSelector);
 

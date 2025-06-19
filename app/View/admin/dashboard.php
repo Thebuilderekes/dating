@@ -1,5 +1,7 @@
-<?php 
-namespace App\Views\admin;
+<?php
+
+namespace App\View\admin;
+
 ob_start();
 $users = $users ?? '';
 ?>
@@ -10,7 +12,7 @@ $users = $users ?? '';
 <input type="text" id="searchInput" placeholder="Search users..." >
 <p id="noResults" class="error">No users match your search.</p>
 
-  <?php if (is_array($users) && !empty($users)): ?>
+  <?php if (is_array($users) && ! empty($users)) { ?>
     <table id ="myTab">
       <thead>
         <tr>
@@ -21,28 +23,28 @@ $users = $users ?? '';
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($users as $u): ?>
+        <?php foreach ($users as $u) { ?>
           <tr>
             <td><?= htmlspecialchars($u['user_id']) ?></td>
             <td><?= htmlspecialchars($u['username']) ?></td>
             <td><?= htmlspecialchars($u['email']) ?></td>
             <td>
-              <?php if ($u['user_id'] != $_SESSION['user_id']): ?>
+              <?php if ($u['user_id'] != $_SESSION['user_id']) { ?>
                 <form method="POST" onsubmit="return confirm('Delete this user?');">
                   <input type="hidden" name="delete_id" value="<?= $u['user_id'] ?>">
                   <button type="submit">Delete</button>
                 </form>
-              <?php else: ?> (Admin) <?php endif; ?>
+              <?php } else { ?> (Admin) <?php } ?>
             </td>
           </tr>
-        <?php endforeach; ?>
+        <?php } ?>
       </tbody>
     </table>
-  <?php elseif ($users === false): ?>
+  <?php } elseif ($users === false) { ?>
     <p class="error">Error loading users. Please try again later.</p>
-  <?php else: ?>
+  <?php } else { ?>
     <p>No users found.</p>
-  <?php endif; ?>
+  <?php } ?>
 <?php
-	return ob_get_clean();
+return ob_get_clean();
 ?>

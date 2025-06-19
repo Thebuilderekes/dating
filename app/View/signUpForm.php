@@ -1,5 +1,7 @@
 <?php
-namespace App\Views;
+
+namespace App\View;
+
 $error = $error ?? '';
 ob_start();
 ?>
@@ -17,7 +19,9 @@ ob_start();
   <section class="form-container">
     <form class="form" method="POST">
       <h2>Sign up</h2>
-      <?php if (!empty($error)) echo "<p class='error'>$error</p>"; ?>
+      <?php if (! empty($error)) {
+          echo "<p class='error'>$error</p>";
+      } ?>
       <label for="username">
         Username:
         <input id="username" name="username"><br>
@@ -41,4 +45,4 @@ ob_start();
   </section>
 </div>
 <?php
-return ob_get_clean(); 
+return ob_get_clean();

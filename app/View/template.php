@@ -1,8 +1,11 @@
 <?php
-namespace App\Views;
+
+namespace App\View;
+
 $content = $content ?? '';
 $logoutUrl = $logoutUrl ?? '';
 $home = $home ?? '';
+$currentPageHome = $currentPageHome ?? '';
 $userName = $userName ?? '';
 $user = $user ?? '';
 $page = $page ?? '';
@@ -31,13 +34,13 @@ $pageTitle = $pageTitle ?? '';
         <nav class="main-nav">
             <ul>
                 <div class="nav-logo-container">
-                     <li><a href="<?php echo $home ? '/' . $home : "/"; ?>"><?php echo $logo ? $logo : ' '; ?></a></li>
+                     <li><a href="<?php echo $home ? '/'.$home : '/'.$currentPageHome; ?>"><?php echo $logo ? $logo : ' '; ?></a></li>
                 </div>
                  <div class="nav-link-wrapper flex-center">
-                <li><a href=""><?php echo $userName ; ?></a></li>
+                <li><a href=""><?php echo $userName; ?></a></li>
                 <li><a href=""><?php echo $logoutUrl; ?></a></li>
-                <li> <button id="toggleSidebar"><?php echo $user;?> </button></li>
-                <li ><a class="btn" href="/<?php echo $page;?>"><?php echo $btn; ?></a></li>
+                <li> <button id="toggleside-nav"><?php echo $user; ?> </button></li>
+                <li ><a class="btn" href="/<?php echo $page; ?>"><?php echo $btn; ?></a></li>
                 </div>
             </ul>
         </nav>
@@ -45,7 +48,7 @@ $pageTitle = $pageTitle ?? '';
     <main>
         <?= $content; ?>
     </main>
- <?php include "footer.view.php";?>
+ <?php include 'footer.view.php'; ?>
 <script src="./app/Scripts/toggleComment.js"></script>
 <script src="./app/Scripts/toggleNav.js"></script>
 <script src="./app/Scripts/dashboard.js"></script>

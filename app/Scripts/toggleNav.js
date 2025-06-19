@@ -1,25 +1,25 @@
-const toggleBtn = document.getElementById('toggleSidebar');
+const toggleBtn = document.getElementById('toggleside-nav');
 const closeMenuBtn = document.getElementById('closeMenuBtn');
-const sidebar = document.querySelector('.sidebar');
+const sideNav = document.querySelector('.side-nav');
 
 
 toggleBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('open');
-  if (sidebar.classList.contains('open')) {
+  sideNav.classList.toggle('open');
+  if (side - nav.classList.contains('open')) {
 
-    sidebar.setAttribute("aria-hidden", false);
+    sideNav.setAttribute("aria-hidden", false);
     closeMenuBtn.setAttribute('aria-expanded', true);
   } else {
 
-    sidebar.setAttribute("aria-hidden", true);
+    sideNav.setAttribute("aria-hidden", true);
     closeMenuBtn.setAttribute('aria-expanded', false);
   }
 });
 
-//close sidebar with closeMenuBtn
+//close side-nav with closeMenuBtn
 closeMenuBtn.addEventListener('click', () => {
-  sidebar.classList.remove('open');
-  sidebar.setAttribute("aria-hidden", true);
+  sideNav.classList.remove('open');
+  sideNav.setAttribute("aria-hidden", true);
   toggleBtn.setAttribute('aria-expanded', false);
   closeMenuBtn.setAttribute('aria-expanded', false);
 });

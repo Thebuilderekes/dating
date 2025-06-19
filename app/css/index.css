@@ -83,7 +83,7 @@ textarea {
 
 .flex-center {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -101,13 +101,11 @@ textarea {
   overflow-y: hidden;
 }
 
-li {
-  padding: 0 10px;
-}
+li {}
 
 
 nav.main-nav {
-  padding: var(--spacing-20);
+  padding: var(--spacing-20) 0;
   position: fixed;
   width: 100%;
   background: var(--bg-light);
@@ -117,6 +115,7 @@ nav.main-nav {
 nav.main-nav ul {
   display: flex;
   justify-content: space-between;
+  padding: 0 var(--spacing-20);
 }
 
 nav.main-nav .nav-link-wrapper {
@@ -137,14 +136,14 @@ nav.main-nav ul li:first-child {
   font-weight: 600;
 }
 
-nav.main-nav ul li button#toggleSidebar {
+nav.main-nav ul li button#toggleside-nav {
   background: none;
   color: var(--primary);
   font-weight: 600;
   font-size: 18px;
 }
 
-nav.main-nav ul li button#toggleSidebar:hover {
+nav.main-nav ul li button#toggleside-nav:hover {
   color: var(--dark-bg);
 }
 
@@ -171,7 +170,6 @@ h1 {
 h2 {
   font-size: 36px;
   text-align: center;
-  padding: var(--spacing-20) 0;
 
 
 }

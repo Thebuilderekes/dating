@@ -1,8 +1,10 @@
 <?php
-namespace App\Views\admin;
+
+namespace App\View\admin;
+
 ob_start();
 ?> 
-  <?php if (!empty($error)): ?><p style="color:red"><?= htmlspecialchars($error) ?></p><?php endif; ?>
+  <?php if (! empty($error)) { ?><p style="color:red"><?= htmlspecialchars($error) ?></p><?php } ?>
 <div class="admin-section-wrapper">
 <section class="form-container admin-login-form-container"> 
  <h2 class="admin-login-heading">Admin Login</h2>

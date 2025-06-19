@@ -1,15 +1,164 @@
+/*TIMELINE CSS*/
+
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+@media(min-width: 800px) {
+    .home-wrapper {
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    }
+}
+
+.home-wrapper aside {
+    display: none;
+    padding: var(--spacing-20);
+    background: var(--mid-dark);
+}
+
+@media(min-width: 800px) {
+    .home-wrapper aside {
+        display: block;
+    }
+}
+
+
+.timeline-wrapper {
+    position: relative;
+    padding: 62px 0;
+    background: var(--dark-bg);
+    width: 100%;
+
+}
+
+@media(min-width: 800px) {
+    .timeline-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        padding-left: 40px;
+        padding-right: 40px;
+        overflow-y: auto;
+        flex: 1;
+    }
+}
+
+.timeline-wrapper h2 {
+    text-align: left;
+}
+
+
+.timeline-wrapper p,
+h2,
+h3,
+h4,
+time,
+summary {
+    color: var(--light);
+}
+
+
+.timeline-wrapper summary {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.timeline {
+    padding: 190px 30px;
+}
+
+.create-post-form {
+    min-width: 100%;
+    background: var(--dark-bg);
+    padding: var(--spacing-20);
+    z-index: 60;
+    position: fixed;
+
+}
+
+
+.post-wrapper {
+    width: 100%;
+    border-top: 1px solid var(--primary);
+    margin: 15px 0;
+}
+
+.post-wrapper textarea {
+    background: var(--dark-bg);
+    color: var(--light)
+}
+
+.post-wrapper .post-comment-btn {
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+
+.comment-wrapper {
+    width: 100%;
+    border-top: 2px solid var(--mid-dark);
+}
+
+.user-article {
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user-article header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comments_list {
+    background: var(--mid-dark);
+    margin-left: 30px;
+}
+
+.delete-btn {
+    background: red;
+    border: none;
+    color: var(--light);
+    padding: 5px 10px;
+}
+
+.delete-btn:hover {
+    background: var(--mid-dark);
+}
+
+.create-post-btn,
+.post-comment-btn {
+    display: block;
+}
+
+button[type="button"] {
+    display: block;
+    background: none;
+    border: 1px solid gray;
+}
+
+.make-comment-btn {
+    color: var(--light);
+    font-size: 0.8rem;
+    padding: 5px 10px;
+}
+
+
 textarea {
     padding: 10px;
 }
 
 
-.home-wrapper {
-    display: flex;
-    overflow: hidden;
-}
 
 
-.sidebar {
+.side-nav {
     display: flex;
     background: var(--mid-dark);
     flex-direction: column;
@@ -20,11 +169,11 @@ textarea {
     right: -200px;
     width: 200px;
     height: 100vh;
-    z-index: 49;
+    z-index: 100;
     transition: right 0.3s ease-in-out;
 }
 
-.sidebar.open {
+.side-nav.open {
     right: 0;
 }
 
@@ -36,13 +185,13 @@ nav #closeMenuBtn {
 }
 
 @media(min-width: 800px) {
-    .sidebar {
+    .side-nav {
         right: -300px;
         width: 300px;
     }
 }
 
-.edit-profile-section p {
+.side-nav p {
     color: var(--light);
     text-align: start;
 }
@@ -51,13 +200,13 @@ nav #closeMenuBtn {
     margin-top: 70px;
 }
 
-.edit-profile-section-details {
+.side-nav-details {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-10);
 }
 
-.edit-profile-section-details a {
+.side-nav-details a {
     text-align: center;
 
 }
@@ -106,106 +255,4 @@ nav #closeMenuBtn {
 .edit-form .save-btn:hover {
     background: var(--primary);
     color: var(--light)
-}
-
-/*TIMELINE CSS*/
-.delete-btn {
-    background: red;
-    border: none;
-    color: var(--light);
-    padding: 5px 10px;
-}
-
-.delete-btn:hover {
-    background: var(--mid-dark);
-}
-
-.create-post-btn,
-.post-comment-btn {
-    display: block;
-}
-
-button[type="button"] {
-    display: block;
-    border: none;
-    width: 50px;
-    background: none;
-    border: 1px solid gray;
-    border-radius: 50px;
-}
-
-.home-wrapper aside {
-    padding: var(--spacing-20);
-    background: var(--mid-dark);
-}
-
-.timeline-wrapper {
-    display: flex;
-    flex-direction: column;
-    background: var(--dark-bg);
-    width: 85%;
-    padding: 0 30px;
-    overflow-y: auto;
-    flex: 1;
-}
-
-
-.timeline-wrapper h2 {
-    text-align: left;
-}
-
-
-.timeline-wrapper p,
-h2,
-h3,
-h4,
-time,
-summary {
-    color: var(--light);
-}
-
-
-.timeline-wrapper summary {
-    margin: 10px;
-    cursor: pointer;
-}
-
-.post-wrapper {
-    width: 100%;
-    border-top: 2px solid var(--mid-dark);
-    margin: 15px 0;
-}
-
-.post-wrapper textarea {
-    background: var(--dark-bg);
-    color: var(--light)
-}
-
-.post-wrapper .post-comment-btn {
-    padding: 5px 10px;
-    font-size: 15px;
-}
-
-
-.comment-wrapper {
-    width: 100%;
-    border-top: 2px solid var(--mid-dark);
-}
-
-.flex-col {
-    padding: 5px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.flex-col header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.comments_list {
-    background: var(--mid-dark);
-    margin-left: 30px;
 }
