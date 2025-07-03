@@ -101,8 +101,6 @@ textarea {
   overflow-y: hidden;
 }
 
-li {}
-
 
 nav.main-nav {
   padding: var(--spacing-20) 0;
@@ -180,6 +178,7 @@ h2 {
   display: flex;
   background: var(--dark-bg);
   flex-direction: column;
+  justify-items: center;
   align-items: center;
 }
 
@@ -223,7 +222,9 @@ h2 {
   border: 3px solid white;
 }
 
-
+.form .form-heading {
+  margin: var(--spacing-10) 0;
+}
 
 @media (min-width: 850px) {
   .form {

@@ -18,21 +18,21 @@ ob_start();
   </section>
   <section class="form-container">
     <form class="form" method="POST">
-      <h2>Sign up</h2>
+      <h2 class="form-heading">Sign up</h2>
       <?php if (! empty($error)) {
           echo "<p class='error'>$error</p>";
       } ?>
       <label for="username">
-        Username:
+        Username
         <input id="username" name="username"><br>
       </label>
       <label for="email">
-        Email:
+        Email
         <input id="email" name="email" type="email" required><br>
       </label>
       </label>
       <label for="password">
-        Password:
+        Password
         <input name="password" id="password" type="password"><br>
       </label>
 

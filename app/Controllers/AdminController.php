@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\Core\Controller;
 use App\Models\Admin;
 use App\Models\User;
-use App\View;
 
 require_once __DIR__.'/../../session.php';
 
@@ -48,7 +47,7 @@ class AdminController extends Controller
         }
     }
 
-    public function dashboard(): mixed
+    public function dashboard(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
             $deleteId = (int) $_POST['delete_id'];

@@ -18,7 +18,7 @@ ob_start();
   <form method="POST" aria-labelledby="create-post-heading" action="/create_post" class="create-post-form">
     <h2 id="create-post-heading">Create post</h2>
     <textarea placeholder="Say something..." rows="3" cols="30" name="content" required></textarea>
-    <button class="create-post-btn btn" type="submit">Post</button>
+    <button class=" d-block submit-post-btn btn" type="submit">Post</button>
   </form>
 <div class="timeline">
   <?php foreach ($posts as $post) { ?>
@@ -41,7 +41,7 @@ ob_start();
           <div class="form-delete-btn-wrapper flex-center">
               <form method="POST" action="/delete_post">
                  <input type="hidden" name="post_id" value="<?= $post['post_id'] ?>">
-                  <button class="delete-btn" type="submit" onclick="return confirm('Delete this post?');">Delete Post</button>
+                  <button class="delete-post-btn" type="submit" onclick="return confirm('Delete this post?');">Delete Post</button>
              </form>
            </div>
         <?php }?>
@@ -50,13 +50,17 @@ ob_start();
         <form method="POST" action="/add_comment" class="comment-form-element">
           <input type="hidden" name="post_id" value="<?= $post['post_id'] ?>">
           <textarea type="text" rows="2" cols/="20" name="comment" placeholder="Write a comment..." required></textarea>
-          <button class="post-comment-btn" type="submit">send</button>
+          <button class="d-block send-comment-btn" type="submit">send</button>
         </form>
       </div>
     </article>
       <?php if (! empty($comments)) { ?>
         <details>
-          <summary>View comments (<?= count($comments) ?>)</summary>
+          <summary>
+<svg aria-hidden="true" fill="#fff" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-chevron-down HeaderMenu-icon ml-1">
+    <path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path>
+</svg>
+View comments (<?= count($comments) ?>)</summary>
           <ul class="comments_list">
             <?php foreach ($comments as $comment) { ?>
               <li>
@@ -74,7 +78,7 @@ ob_start();
                    <?php if ($_SESSION['user_id'] === $comment['user_id']) {  ?>
                      <form method="POST" action="/delete_comment">
                         <input type="hidden" name="comment_id" value="<?= $comment['comment_id'] ?>">
-                        <button type="submit" onclick="return confirm('Delete this comment?')">Delete Comment</button>
+                        <button class="delete-comment-btn" type="submit" onclick="return confirm('Delete this comment?')">Delete Comment</button>
                       </form>
                   <?php } ?>
                 </article>

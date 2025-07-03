@@ -9,7 +9,7 @@ $adminController = new AdminController();
 $postController = new PostController();
 switch ($uri) {
     case '/':
-        $userController->signUp();
+        $userController->signup();
         break;
     case '/admin_login':
         $adminController->login();
@@ -26,8 +26,8 @@ switch ($uri) {
     case '/logout':
         $userController->logout();
         break;
-    case '/signUp':
-        $userController->signUp();
+    case '/signup':
+        $userController->signup();
         break;
     case '/home':
         $userController->home();

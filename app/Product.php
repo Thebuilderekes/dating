@@ -2,13 +2,12 @@
 
 namespace App;
 
-class Products
+class Product
 {
-    public int $productname;
+    public string $productname;
 
-    public int $productImage;
-
-    public function __construct($productname, $productImage)
+    public string $productImage;
+    public function __construct(string $productname, string $productImage)
     {
         $this->productname = $productname;
         $this->productImage = $productImage;

@@ -1,7 +1,10 @@
 
 # Ignore the vendor directory (Composer dependencies)
 vendor/
+app/Product.php
+app/Products.php
 TODO.md
+CSSguide.md
 phpstan.neon
 # Ignore Composer lock file if you prefer not to lock the dependencies (not recommended)
 # composer.lock

@@ -5,7 +5,7 @@ namespace App\View;
 // Simulate fetching content (e.g., dashboard content)
 $home = 'home';
 $content = include 'homePage.php';
-$user = $user['username'];
+$user = $user['username'] ?? "";
 $currentPageHome = 'home';
 $page = 'logout';
 $btn = 'Logout';

@@ -36,29 +36,29 @@ class UserController extends Controller
         }
     }
 
-    public function signUp()
+    public function signup()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 // Simple validation
                 if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password'])) {
-                    $this->view('signUp', ['error' => 'All fields are required.']);
+                    $this->view('signup', ['error' => 'All fields are required.']);
 
                     return;
                 }
 
-                $success = $this->userModel->signUp($_POST['username'], $_POST['email'], $_POST['password']);
+                $success = $this->userModel->signup($_POST['username'], $_POST['email'], $_POST['password']);
                 if ($success) {
                     header('Location: /login');
                     exit;
                 } else {
-                    $this->view('signUp', ['error' => 'This username/email is already taken']);
+                    $this->view('signup', ['error' => 'This username/email is already taken']);
                 }
             } catch (\Exception) {
-                $this->view('signUp', ['error' => 'This username/email is already taken']);
+                $this->view('signup', ['error' => 'This username/email is already taken']);
             }
         } else {
-            $this->view('signUp');
+            $this->view('signup');
         }
     }
 

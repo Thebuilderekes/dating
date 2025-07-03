@@ -39,7 +39,7 @@ $pageTitle = $pageTitle ?? '';
                  <div class="nav-link-wrapper flex-center">
                 <li><a href=""><?php echo $userName; ?></a></li>
                 <li><a href=""><?php echo $logoutUrl; ?></a></li>
-                <li> <button id="toggleside-nav"><?php echo $user; ?> </button></li>
+                <li> <button id="toggleside-nav" aria-controls="side-nav"><?php echo $user; ?> </button></li>
                 <li ><a class="btn" href="/<?php echo $page; ?>"><?php echo $btn; ?></a></li>
                 </div>
             </ul>

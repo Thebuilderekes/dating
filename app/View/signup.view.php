@@ -4,8 +4,8 @@ namespace App\View;
 
 // Simulate fetching content (e.g., dashboard content)
 
-$content = include 'signUpForm.php';
-$currentPageHome = 'signUp';
+$content = include 'signupForm.php';
+$currentPageHome = 'signup';
 $page = 'login';
 $btn = 'Login';
 $logo = 'Meetand';

@@ -5,6 +5,7 @@ namespace App\View\admin;
 ob_start();
 $users = $users ?? '';
 ?>
+<section>
   <h1>Admin Panel</h1>
   <a class="logout_btn" href="/admin_logout">Logout</a>
 
@@ -45,6 +46,7 @@ $users = $users ?? '';
   <?php } else { ?>
     <p>No users found.</p>
   <?php } ?>
+</section>
 <?php
 return ob_get_clean();
 ?>

@@ -13,7 +13,7 @@ class User
         $this->pdo = Database::connect();
     }
 
-    public function signUp(string $username, string $email, string $password): mixed
+    public function signup(string $username, string $email, string $password): mixed
     {
         try {
             $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -22,27 +22,26 @@ class User
 
             return $stmt->execute([$username, $email, $hash]);
         } catch (\PDOException $e) {
-            error_log('signUp error: '.$e->getMessage());
+            error_log('signup error: '.$e->getMessage());
 
             return false;
         }
     }
 
-    public function login(string $username, string $password): mixed
+    public function login(string $username, string $password)
     {
         try {
             $sql = 'SELECT * FROM dating_app_user WHERE username = ?';
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute([$username]);
             $user = $stmt->fetch(\PDO::FETCH_ASSOC);
-            if (! $user) {
+            if (!$user) {
                 $error = 'Invalid username or password.';
             }
             if ($user && password_verify($password, $user['password'])) {
                 $_SESSION['user'] = $user;
                 $_SESSION['user_id'] = $user['user_id']; // ✅ add this line
                 $_SESSION['is_admin'] = $user['is_admin']; // 🟡 Added this recently line on 1st june
-
                 return $user;
             }
         } catch (\PDOException $e) {

@@ -4,9 +4,9 @@ namespace App\View;
 
 // Simulate fetching content (e.g., dashboard content)
 $content = include 'loginForm.php';
-$currentPageHome = 'signUp';
+$currentPageHome = 'signup';
 $btn = 'Sign Up';
-$page = 'signUp';
+$page = 'signup';
 $logo = 'Meetand';
 $pageTitle = 'log in - Meetand';
 // Include the template and pass the content to be injected

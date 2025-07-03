@@ -6,6 +6,7 @@ namespace App\View;
 $user = $user['username'];
 $content = include 'edit_profileForm.php';
 $btn = 'Logout';
+$home = "home";
 $logo = 'Meetand';
 $pageTitle = $user.' - edit profile';
 // Include the template and pass the content to be injected
